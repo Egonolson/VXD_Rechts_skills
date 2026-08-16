@@ -1,0 +1,30 @@
+{
+  "name": "fachanwalt-miet-wohnungseigentumsrecht",
+  "version": "439.5.0",
+  "description": "Großer Fachanwalt-Kompass Miet- und Wohnungseigentumsrecht mit über 200 Skills für Wohnraum, Gewerberaum, Betriebskosten, WEG, Hausverwaltung, Beschlüsse, GEG, Beweise, Fristen und Workflows.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "betriebskosten",
+    "co2kosten",
+    "fachanwalt",
+    "fao-paragraf-14e",
+    "gewerberaum",
+    "gewerberaummiete",
+    "hausverwaltung",
+    "heizkosten",
+    "kuendigung",
+    "mieterhoehung",
+    "mietrecht",
+    "modernisierung",
+    "raeumung",
+    "weg",
+    "weg-beschluss",
+    "wohnraummiete",
+    "wohnungseigentumsrecht"
+  ]
+}

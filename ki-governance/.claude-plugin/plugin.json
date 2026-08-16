@@ -1,0 +1,23 @@
+{
+  "name": "ki-governance",
+  "version": "439.5.0",
+  "description": "EU-KI-VO + DSGVO – Use-Case-Triage, KI-Inventar, AIA/DPIA, Vendor-Review, Drift-Monitoring der KI-Richtlinie.",
+  "keywords": [
+    "governance",
+    "eu-ki-vo",
+    "dsgvo",
+    "use-case-triage",
+    "ki-inventar",
+    "aia",
+    "dpia",
+    "vendor-review",
+    "drift-monitoring",
+    "ki-richtlinie"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

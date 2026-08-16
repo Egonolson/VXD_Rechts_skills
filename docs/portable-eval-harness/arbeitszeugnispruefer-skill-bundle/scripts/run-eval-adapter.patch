@@ -1,0 +1,19 @@
+--- run-eval.py	(original from klotzkette/claude-fuer-deutsches-recht)
++++ run-eval.py	(arbeitszeugnispruefer-skill adapter)
+@@ TESTAKTEN-Pfad anpassen @@
+
+# Original (Klotzkette-Repo):
+#   REPO = Path(__file__).resolve().parents[1]
+#   TESTAKTEN = REPO / "testakten"
+#
+# Im arbeitszeugnispruefer-skill-Repo gibt es nur ein 'skill/' und ein
+# 'testakten/' (mit Demo-Akte). Die Variable bleibt unveraendert; falls
+# du Test-Faelle in einem anderen Verzeichnis ablegen willst, hier
+# anpassen, z. B.:
+#
+#   TESTAKTEN = REPO / "testfaelle"
+#
+# Oder du legst pro Pruef-Zeugnis ein Verzeichnis unter testakten/ an
+# (siehe Beispiel-Rubrics im Bundle).
+
+# Keine inhaltliche Aenderung des Eval-Algorithmus noetig.

@@ -1,0 +1,24 @@
+{
+  "name": "vertragsrecht",
+  "version": "439.5.0",
+  "description": "Vertragsrecht – Lieferanten- und Vertriebsverträge, AGB §§ 305 ff. BGB, NDA, SaaS-/MSA-Review, Renewal-Tracking, Eskalations-Routing, Business-Zusammenfassungen.",
+  "keywords": [
+    "vertragsrecht",
+    "lieferanten",
+    "vertriebsvertraege",
+    "agb",
+    "bgb",
+    "nda",
+    "saas",
+    "msa-review",
+    "renewal-tracking",
+    "eskalations-routing",
+    "business-zusammenfassungen"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

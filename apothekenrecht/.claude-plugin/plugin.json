@@ -1,0 +1,23 @@
+{
+  "name": "apothekenrecht",
+  "version": "439.5.0",
+  "description": "Super-Plugin für Apothekenrecht: Betriebserlaubnis, ApBetrO, Versand, E-Rezept, BtM, Retaxation, Aufsicht und Compliance.",
+  "keywords": [
+    "apothekenrecht",
+    "super-plugin",
+    "betriebserlaubnis",
+    "apbetro",
+    "versand",
+    "e-rezept",
+    "btm",
+    "retaxation",
+    "aufsicht",
+    "compliance"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

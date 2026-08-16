@@ -1,0 +1,19 @@
+{
+  "name": "pruefungsrecht-hochschule",
+  "version": "439.5.0",
+  "description": "Hochschulprüfungsrecht: Prüfungsordnung, Bewertungsspielraum, Akteneinsicht, Krankheit, Nachteilsausgleich, Täuschung, KI, Drittversuch und Eilrechtsschutz.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "pruefungsrecht",
+    "hochschule",
+    "universität",
+    "prüfung",
+    "drittversuch",
+    "nachteilsausgleich"
+  ]
+}

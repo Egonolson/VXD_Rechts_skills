@@ -1,0 +1,22 @@
+{
+  "name": "versicherungsrecht",
+  "version": "439.5.0",
+  "description": "Großes Versicherungsrecht-Plugin für VVG, VAG, europäische Versicherungsaufsicht, Lebensversicherung, BU, PKV, Rechtsschutz, Kreditversicherung, D&O, Cyber, Sach- und Haftpflichtdeckung.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "versicherungsrecht",
+    "vvg",
+    "vag",
+    "bafin",
+    "lebensversicherung",
+    "rechtsschutzversicherung",
+    "kreditversicherung",
+    "bu",
+    "pkv"
+  ]
+}

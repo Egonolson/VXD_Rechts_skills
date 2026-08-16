@@ -1,0 +1,25 @@
+{
+  "name": "schriftform-und-textform-bgb",
+  "displayName": "Schriftform und Textform im BGB",
+  "version": "439.5.0",
+  "description": "Formerfordernisse im deutschen Zivilrecht: Schriftform, Textform, qES, Zugang, beA/ERV und Prozessordnungen. Mit Checklisten, Dokumentation und Rechtsprechung nur nach Live-Verifikation.",
+  "keywords": [
+    "schriftform",
+    "textform",
+    "bgb",
+    "formerfordernisse",
+    "zivilrecht",
+    "qes",
+    "zugang",
+    "bea",
+    "erv",
+    "prozessordnungen",
+    "checklisten",
+    "dokumentation"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

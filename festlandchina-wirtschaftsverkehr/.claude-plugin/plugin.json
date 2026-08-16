@@ -1,0 +1,24 @@
+{
+  "name": "festlandchina-wirtschaftsverkehr",
+  "version": "439.5.0",
+  "description": "Mega-Plugin für wirtschaftlichen Umgang mit Festlandchina: Fabrik, Import, Export, Investition, De-Risking, Lieferkette, IP, Daten, Exportkontrolle und politisches Risiko.",
+  "keywords": [
+    "festlandchina",
+    "wirtschaftsverkehr",
+    "mega-plugin",
+    "wirtschaftlichen",
+    "umgang",
+    "fabrik",
+    "import",
+    "export",
+    "investition",
+    "de-risking",
+    "lieferkette",
+    "daten"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

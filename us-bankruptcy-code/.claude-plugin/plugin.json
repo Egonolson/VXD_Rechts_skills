@@ -1,0 +1,20 @@
+{
+  "name": "us-bankruptcy-code",
+  "version": "439.5.0",
+  "description": "US Bankruptcy Code Title 11: Chapters 7/9/11/12/13/15, Automatic Stay, Claims, DIP, 363 Sales, Plans und Cross-Border.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "us-bankruptcy",
+    "title-11",
+    "chapter-11",
+    "chapter-7",
+    "chapter-13",
+    "subchapter-v",
+    "chapter-15"
+  ]
+}

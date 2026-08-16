@@ -1,0 +1,23 @@
+{
+  "name": "fachanwalt-arbeitsrecht",
+  "version": "439.5.0",
+  "description": "Fachanwalt-Arbeitsrecht nach FAO Paragraf 10: KSchG, BetrVG, TzBfG, AGG, EntgTranspG, Urlaub, Betriebsrat, Befristung und Vergleichspraxis. Rechtsprechung nur mit Datum, Aktenzeichen und verifizierter Quelle.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "arbeitsrecht",
+    "fachanwalt",
+    "kuendigungsschutz",
+    "kschg",
+    "betriebsverfassung",
+    "betrvg",
+    "tzbfg",
+    "befristung",
+    "agg",
+    "fao-paragraf-10"
+  ]
+}

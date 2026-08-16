@@ -1,0 +1,24 @@
+{
+  "name": "handelsrecht-hgb",
+  "displayName": "Handelsrecht HGB",
+  "version": "439.5.0",
+  "description": "Reines HGB-Plugin für Handelsrecht: Kaufmann, Handelsregister, Firma, Prokura, Handlungsvollmacht, Handelsgeschäfte, Handelskauf, Handelsvertreter, Makler, Kommission, Fracht, Spedition, Lager, Handelsbücher sowie OHG/KG einschließlich MoPeG-Statuswechsel von GbR zu OHG.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "keywords": [
+    "hgb",
+    "handelsrecht",
+    "kaufmann",
+    "handelsregister",
+    "prokura",
+    "ohg",
+    "kg",
+    "handelskauf",
+    "handelsvertreter",
+    "spedition",
+    "lager"
+  ]
+}

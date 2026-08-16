@@ -1,0 +1,38 @@
+{
+  "name": "gesellschaftsgruender",
+  "version": "439.5.0",
+  "description": "Gruendungsassistent fuer deutsche Gesellschaften: Rechtsformwahl, Satzung, Notar, Handelsregister, Bank/KYC, Steuerstart, IP, Erlaubnisse, erste Vertraege, Budget und Streitpraevention.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "keywords": [
+    "gesellschaftsgruendung",
+    "gmbh-gruendung",
+    "ug-gruendung",
+    "egbr",
+    "mopeg",
+    "dirug",
+    "handelsregister",
+    "notar",
+    "gesellschaftsvertrag",
+    "satzung",
+    "geschaeftsfuehrer",
+    "stammkapital",
+    "transparenzregister",
+    "gewerbeanmeldung",
+    "finanzamt-erfassung",
+    "ihk",
+    "gwg",
+    "kg",
+    "gmbh-co-kg",
+    "partg",
+    "ggmbh",
+    "ek",
+    "startup",
+    "boutique",
+    "freiberufler"
+  ],
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

@@ -1,0 +1,40 @@
+{
+  "gericht-sicher": {
+    "max_length_including_extension": 60,
+    "ascii_only": true,
+    "separator": "_",
+    "lead_document_sequence": "00",
+    "exhibit_sequence_start": 1,
+    "example_lead": "00_20260710_Schriftsatz_Klage_Neueingang.pdf",
+    "example_exhibit": "01_20260710_AnlageK1_Kaufvertrag.pdf"
+  },
+  "berlin": {
+    "max_length_including_extension": 60,
+    "ascii_only": true,
+    "separator": "_",
+    "lead_document_sequence": "00",
+    "exhibit_sequence_start": 1,
+    "example_lead": "00_20260710_Schriftsatz_Klage_Neueingang.pdf",
+    "example_exhibit": "01_20260710_AnlageK1_Kaufvertrag.pdf",
+    "source": "https://www.berlin.de/gerichte/kammergericht/service/hinweise-zur-elektronischen-einreichung-von-schriftsaetzen-und-anlagen-bei-den-ordentlichen-gerichten-berlins_final2.pdf"
+  },
+  "nrw": {
+    "max_length_including_extension": 60,
+    "ascii_only": true,
+    "separator": "_",
+    "role_on_lead_document_only": true,
+    "example_lead": "K_Schriftsatz_mit_Antraegen.pdf",
+    "example_exhibit": "Anlage_01_Kaufvertrag.pdf",
+    "source": "https://www.justiz.nrw/sites/default/files/imported/files/2022-11/Namenskonvention-fuer-Externe-Nutzer.pdf"
+  },
+  "bund": {
+    "max_length_including_extension": 90,
+    "ascii_only": false,
+    "separator": "_",
+    "lead_document_sequence": "00",
+    "exhibit_sequence_start": 1,
+    "example_lead": "00_Schriftsatz_Klage.pdf",
+    "example_exhibit": "01_Anlage_K1_Kaufvertrag.pdf",
+    "source": "https://justiz.de/laender-bund-europa/elektronische_kommunikation/bundesanzeiger_29_07_2025.pdf"
+  }
+}

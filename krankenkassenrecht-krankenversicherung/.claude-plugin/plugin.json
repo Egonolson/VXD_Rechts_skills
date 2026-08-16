@@ -1,0 +1,24 @@
+{
+  "name": "krankenkassenrecht-krankenversicherung",
+  "version": "439.5.0",
+  "description": "Plugin für GKV, PKV, Beihilfe-Schnittstellen und Krankenversicherungsrecht: Leistungen, Beiträge, Krankengeld, Hilfsmittel, Widerspruch, MD, Versicherungsvertrag und Kostenerstattung.",
+  "keywords": [
+    "krankenkassenrecht",
+    "krankenversicherung",
+    "gkv",
+    "pkv",
+    "beihilfe-schnittstellen",
+    "krankenversicherungsrecht",
+    "leistungen",
+    "beitraege",
+    "krankengeld",
+    "hilfsmittel",
+    "widerspruch",
+    "versicherungsvertrag"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "juristische-presseberichterstattung",
+  "version": "439.5.0",
+  "description": "Plugin für juristische Presseberichterstattung: Gerichtsbericht, Entscheidungsnews, Verdachtsbericht, Pressemitteilung, Headline, Bildprüfung, Quellenmatrix und Redaktionsschluss-Qualitygate.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "presseberichterstattung",
+    "presserecht",
+    "gerichtsbericht",
+    "redaktion",
+    "verdachtsberichterstattung",
+    "pressemitteilung",
+    "headline",
+    "faktencheck",
+    "persoenlichkeitsrecht",
+    "kug"
+  ]
+}

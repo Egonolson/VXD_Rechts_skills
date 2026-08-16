@@ -1,0 +1,25 @@
+{
+  "name": "kanzlei-builder-hub",
+  "version": "439.5.0",
+  "description": "Findet, prüft und installiert Community-Skills mit Security-Review-Gate vor dem Deployment in die Kanzleiumgebung.",
+  "keywords": [
+    "kanzlei",
+    "builder",
+    "hub",
+    "findet",
+    "prueft",
+    "installiert",
+    "community-skills",
+    "security-review-gate",
+    "vor",
+    "dem",
+    "deployment",
+    "kanzleiumgebung"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

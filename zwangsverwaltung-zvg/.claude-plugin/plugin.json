@@ -1,0 +1,31 @@
+{
+  "name": "zwangsverwaltung-zvg",
+  "version": "439.5.0",
+  "description": "Freistehendes ZVG-Plugin für Zwangsverwaltung und Versteigerung: Beschlagnahme, Besitz, Mieten, Treuhandkonto, Berichte, Verteilung, ZVG-Portal-Recherche, Bieterangebote und Versteigerungsteilnahme.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "zwangsverwaltung",
+    "zvg",
+    "zwvwv",
+    "zwangsverwalter",
+    "beschlagnahme",
+    "besitzerlangung",
+    "miete",
+    "pacht",
+    "rent-roll",
+    "treuhandkonto",
+    "rechnungslegung",
+    "verteilungsplan",
+    "155-zvg",
+    "zwangsversteigerung",
+    "zvg-portal",
+    "bietstrategie",
+    "geringstes-gebot",
+    "freistehend"
+  ]
+}

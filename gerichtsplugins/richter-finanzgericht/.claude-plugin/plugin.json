@@ -1,0 +1,17 @@
+{
+  "name": "richter-finanzgericht",
+  "version": "439.5.0",
+  "description": "Finanzgericht: Sachprüfung Anfechtungsklage Verpflichtungsklage Aussetzung der Vollziehung Paragraf 69 FGO Beweiswürdigung im Amtsermittlungsgrundsatz und Urteilsentwurf mit Tenorvorschlag",
+  "keywords": [
+    "experimental-justiz",
+    "gericht",
+    "richter",
+    "revisionssicher",
+    "richter"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

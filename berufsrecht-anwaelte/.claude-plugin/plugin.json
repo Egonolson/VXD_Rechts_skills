@@ -1,0 +1,20 @@
+{
+  "name": "berufsrecht-anwaelte",
+  "version": "439.5.0",
+  "description": "Plugin für anwaltliches Berufsrecht: BRAO, BORA, FAO, beA, Kanzleisitz, Werbung, Interessenkollision, Verschwiegenheit, KI-/Cloud-Outsourcing, Schatten-KI, Berufsausübungsgesellschaft, Gebühren, Kammeraufsicht und anwaltsgerichtliche Risiken.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "anwaelte",
+    "berufsrecht",
+    "kammer",
+    "aufsicht",
+    "ki-outsourcing",
+    "paragraph-43e-brao",
+    "paragraph-203-stgb"
+  ]
+}

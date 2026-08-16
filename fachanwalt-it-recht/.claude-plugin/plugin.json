@@ -1,0 +1,26 @@
+{
+  "name": "fachanwalt-it-recht",
+  "version": "439.5.0",
+  "description": "Plugin Fachanwalt für Informationstechnologierecht. SaaS Software-Lizenz DSGVO BDSG TTDSG TKG NIS2 DDG DSA DMA EU-KI-VO Open-Source. Schnittstellen Plugin datenschutzrecht ki-governance kanzlei-allgemein.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "it-recht",
+    "fachanwalt",
+    "saas",
+    "software-lizenz",
+    "dsgvo",
+    "bdsg",
+    "ttdsg",
+    "tkg",
+    "nis2",
+    "dsa",
+    "dma",
+    "ki-vo",
+    "open-source"
+  ]
+}

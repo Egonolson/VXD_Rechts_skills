@@ -1,0 +1,25 @@
+{
+  "name": "kanzlei-mandant-lifecycle",
+  "version": "439.5.0",
+  "description": "Lifecycle-Plugin für Kanzlei, Mandant und Rechtsabteilung: Mandatsstart, OCG, Budget, Dashboard, Rechnung, Litigation, Erwartungsmanagement und Relationship-Governance.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "kanzlei",
+    "mandant",
+    "rechtsabteilung",
+    "legal-ops",
+    "dashboard",
+    "billing",
+    "outside-counsel",
+    "matter-management",
+    "rvg",
+    "brao",
+    "bora",
+    "litigation-management"
+  ]
+}

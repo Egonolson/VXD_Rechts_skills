@@ -1,0 +1,25 @@
+{
+  "name": "ki-vo-ai-act-pruefer",
+  "version": "439.5.0",
+  "description": "Mechanik-Workflow zur KI-VO (EU 2024/1689): KI-System-Definition, Rollen, Risikoklassen, Hochrisiko-Diagnose, GPAI, Art. 43-Konformitätsbewertung, CE/EU-DB, Marktbeobachtung, Konformitäts-Evidence-Pack, KI-Kompetenz, Shadow-AI, Berufsrecht, Hochschul- und Behördenpraxis.",
+  "keywords": [
+    "act",
+    "pruefer",
+    "mechanik-workflow",
+    "zur",
+    "ki-vo",
+    "ki-system-definition",
+    "rollen",
+    "risikoklassen",
+    "hochrisiko-diagnose",
+    "gpai",
+    "art",
+    "43-konformitaetsbewertung"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

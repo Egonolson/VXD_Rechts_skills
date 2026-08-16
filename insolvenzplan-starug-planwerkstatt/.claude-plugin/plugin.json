@@ -1,0 +1,23 @@
+{
+  "name": "insolvenzplan-starug-planwerkstatt",
+  "version": "439.5.0",
+  "description": "Freistehendes Plugin für Insolvenzplan und StaRUG-Restrukturierungsplan: Intake, Sanierungskonzept, Vergleichsrechnung, Gruppen, Klassen, darstellender und gestaltender Teil, Anlagen, Abstimmung, Cram-down, Minderheitenschutz, Gericht und Planvollzug.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "insolvenzplan",
+    "starug",
+    "restrukturierungsplan",
+    "sanierung",
+    "vergleichsrechnung",
+    "gruppenbildung",
+    "cramdown",
+    "minderheitenschutz",
+    "planung",
+    "freistehend"
+  ]
+}

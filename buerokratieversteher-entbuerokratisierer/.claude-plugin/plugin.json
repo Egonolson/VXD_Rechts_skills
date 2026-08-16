@@ -1,0 +1,24 @@
+{
+  "name": "buerokratieversteher-entbuerokratisierer",
+  "version": "439.5.0",
+  "description": "Allgemeiner Bürokratieversteher und Entbürokratisierer für Laien, Menschen mit Deutsch als Zweitsprache und alle, die Bescheide, Anträge, Vorladungen, Behördenbriefe, Jugendamt-, Schul-, Bau-, Sozial-, Familien- oder Kommunalverfahren verstehen und vorsichtig bearbeiten wollen.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "buerokratie",
+    "bescheid",
+    "antrag",
+    "widerspruch",
+    "laien",
+    "deutsch-als-zweitsprache",
+    "verwaltungsrecht",
+    "jugendamt",
+    "schule",
+    "kita",
+    "familiengericht"
+  ]
+}

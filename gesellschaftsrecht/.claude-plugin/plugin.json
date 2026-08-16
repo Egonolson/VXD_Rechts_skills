@@ -1,0 +1,25 @@
+{
+  "name": "gesellschaftsrecht",
+  "version": "439.5.0",
+  "description": "Gesellschaftsrecht fuer GmbH, AG und Personengesellschaften: Beschluesse, Gesellschafterliste, Satzung, Organhaftung, Streit, Kapitalerhaltung, Umwandlung, Register und Transaktionen.",
+  "keywords": [
+    "gesellschaftsrecht",
+    "gmbh",
+    "personengesellschaften",
+    "a-due-diligence",
+    "ohne",
+    "discovery",
+    "datenraum",
+    "gesellschafterbeschluesse",
+    "hrb",
+    "hra-anmeldungen",
+    "closing",
+    "checklists"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

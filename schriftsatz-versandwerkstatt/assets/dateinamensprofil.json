@@ -1,0 +1,12 @@
+{
+  "kanzlei-ascii": {
+    "max_length_including_extension": 80,
+    "ascii_only": true,
+    "separator": "_",
+    "lead_document_sequence": "00",
+    "exhibit_sequence_start": 1,
+    "example_lead": "00_20260714_Klageerwiderung_12_O_34_26.pdf",
+    "example_exhibit": "01_20260714_AnlageB1_Kaufvertrag.pdf",
+    "note": "Bewusst strenger als die ERVB-Hoechstgrenze von 90 Zeichen."
+  }
+}

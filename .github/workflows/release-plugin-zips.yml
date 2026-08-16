@@ -1,0 +1,350 @@
+name: Release Plugin ZIPs
+
+# Baut bei jedem Tag oder bei manueller Ausloesung pro Plugin eine ZIP-Datei
+# und haengt sie an den GitHub Release. Damit ergeben sich stabile Download-URLs:
+#   https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/latest/download/<plugin>.zip
+# Direkt einzeln in kompatiblen Plugin-Oberflaechen installierbar.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release-Tag (z. B. v1.1.0). Leer = nur ZIPs bauen, keinen Release anlegen.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Validator
+        run: node scripts/validate-plugin-structure.mjs
+
+      - name: Python-Abhängigkeiten installieren
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Layoutgetreue Office-PDF-Konvertierung bereitstellen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer libreoffice-calc libreoffice-impress fonts-dejavu-core fonts-liberation2
+
+      - name: YAML-Frontmatter validieren
+        run: python3 scripts/validate-yaml-frontmatter.py
+
+      - name: Testakten-Rubriken vollständig auswerten
+        run: |
+          python3 scripts/test-run-eval.py
+          python3 scripts/run-eval.py --quiet
+
+      - name: Release- und PDF-Helfer testen
+        run: |
+          python3 scripts/test-release-assets.py
+          python3 scripts/test-testakte-pdf-build.py
+          python3 scripts/test-testakten-email-quality.py
+
+      - name: Skill-Aktivierungssignale prüfen
+        run: python3 scripts/audit-skill-activation.py
+
+      - name: Gesamt-PDFs der Testakten reproduzierbar bauen und validieren
+        run: |
+          python3 scripts/validate-testakten-dokumentqualitaet.py
+          python3 scripts/build-testakte-gesamt-pdf.py
+          python3 scripts/validate-testakten-gesamt-pdf.py
+
+      - name: Keine Markdown-Aktenstücke in Testakten validieren
+        run: python3 scripts/validate-testakten-keine-markdown-aktenstuecke.py
+
+      - name: CSV-Aktenstücke validieren
+        run: python3 scripts/validate-testakten-csv.py
+
+      - name: Downloadhinweise der Testakten validieren
+        run: |
+          python3 scripts/inject-gesamt-pdf-section.py
+          python3 scripts/validate-testakten-readme-downloads.py
+
+      - name: Werkstatt- und Schnellstart-Prompts erzeugen
+        run: |
+          # Werkstatt- und Schnellstart-Prompts sind reine Markdown-Begleitdateien,
+          # die NICHT als Skills in die Plugin-Logik gehören.
+          # Das frueher hier aufgerufene sync-schnellstart-skill.py wurde absichtlich
+          # entfernt, weil es pro Plugin einen skills/<plugin>-schnellstart/SKILL.md
+          # erzeugt hat. Diese Wrapper-Skills würden beim Marketplace-Install als
+          # zusätzlicher Skill geladen, obwohl sie nur Einstiegsdateien enthalten.
+          # Die Werkstatt- und Schnellstart-Prompts bleiben ausschließlich als
+          # direkte Markdown-Downloads im Repository erreichbar. Sie gehören
+          # weder in die Skill-Logik noch in die installierbaren Plugin-ZIPs.
+          python3 scripts/generate-werkstatt-und-schnellstart-prompts.py
+          python3 scripts/refine-speed-and-elegance.py
+          python3 scripts/inject-streitstoff-beitrag-gerichtsplugins.py
+          python3 scripts/generate-megaprompt.py
+          python3 scripts/inject-megaprompt-section.py
+          python3 scripts/inject-direkt-loslegen-section.py
+          python3 scripts/generate-skills-overview.py
+          python3 scripts/inject-skills-logic-navigation.py
+          python3 scripts/generate-werkstatt-und-schnellstart-coverage.py
+          python3 scripts/audit-generated-prompt-hygiene.py
+          python3 scripts/audit-prompt-profile-routing.py
+          python3 scripts/audit-quickstart-usability.py
+          python3 scripts/validate-current-law-sentinels.py
+          python3 scripts/test-legal-calculators.py
+          python3 scripts/test-bea-versandmappe.py
+          python3 scripts/test-schriftsatz-versandwerkstatt.py
+
+      - name: Skill-Indizes neu erzeugen (SKILLS.md + skills-index, Stand = marketplace-Version)
+        run: python3 scripts/generate-skills-md.py
+
+      - name: Release-Asset-Index neu erzeugen
+        run: python3 scripts/generate-asset-index.py
+
+      - name: Vollständigen Plugin-Katalog in README.md neu erzeugen
+        run: python3 scripts/generate-root-plugin-catalog.py
+
+      - name: Root- und Index-Übersichten gegen Marketplace validieren
+        run: |
+          python3 scripts/validate-root-readme-overview.py
+          python3 scripts/validate-readme-navigation.py
+          python3 scripts/validate-markdown-structure.py
+
+      - name: Pluginlokale Gesamt-PDFs der Testakten bauen
+        run: python3 scripts/build-plugin-testakte-gesamt-pdfs.py
+
+      - name: Generierte Textdateien gegen den Tag prüfen
+        run: git diff --exit-code -- . ':(exclude,glob)**/gesamt-pdf/*.pdf'
+
+      - name: Liste aller Plugins aus marketplace.json lesen
+        id: plugins
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, pathlib
+          m = json.loads(pathlib.Path('.claude-plugin/marketplace.json').read_text())
+          plugins = [
+              {"name": p["name"], "source": p.get("source") or f"./{p['name']}"}
+              for p in m["plugins"]
+          ]
+          names = [p["name"] for p in plugins]
+          print('names=' + ' '.join(names))
+          print('plugins_json=' + json.dumps(plugins, ensure_ascii=False, separators=(',', ':')))
+          PY
+
+      - name: ZIPs bauen
+        env:
+          PLUGINS_JSON: ${{ steps.plugins.outputs.plugins_json }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          python3 - <<'PY' > dist/plugin-map.tsv
+          import json
+          import os
+
+          for plugin in json.loads(os.environ["PLUGINS_JSON"]):
+              print(f"{plugin['name']}\t{plugin['source']}")
+          PY
+          while IFS=$'\t' read -r plugin source; do
+            source="${source#./}"
+            if [ ! -d "$source" ]; then
+              echo "Plugin-Quelle fehlt: $plugin -> $source" >&2
+              exit 1
+            fi
+            echo "Baue $plugin.zip"
+            (cd "$source" && zip -rq "${GITHUB_WORKSPACE}/dist/${plugin}.zip" . \
+              -x '*.DS_Store' '*__pycache__*' '*.pyc' 'CLAUDE.md' \
+                 '*-werkstatt.md' '*-schnellstart.md')
+            ls -la "dist/${plugin}.zip"
+          done < dist/plugin-map.tsv
+          # Manifest fuer Marketplace-Komfort
+          cp .claude-plugin/marketplace.json dist/marketplace.json
+
+      - name: Release-ZIPs validieren
+        run: python3 scripts/validate-release-zips.py dist .claude-plugin/marketplace.json
+
+      - name: Beispielakten separat verpacken (kein Teil der Plugins, testakte-Prefix)
+        run: |
+          # Beispielakten werden mit testakte-Prefix gepackt, damit sie sich im
+          # Namespace klar von Plugin-ZIPs unterscheiden und niemals versehentlich
+          # über 'Install from .zip' als Plugin geladen werden können.
+          python3 scripts/build-testakten-release-zips.py dist
+          ls -la dist/testakte-*.zip | head
+
+      - name: Testakten-Release-ZIPs validieren
+        run: python3 scripts/validate-testakten-release-zips.py dist
+
+      - name: Einzel-PDF-ZIPs der Testakten bauen (jede Unterlage als eigene PDF)
+        run: |
+          # Pro Testakte ein ZIP, in dem jede Unterlage als separate PDF vorliegt
+          # (im Gegensatz zum Gesamt-PDF, das alle Stücke in ein Dokument fasst).
+          mkdir -p dist/testakten-einzelpdfs
+          python3 scripts/build-testakten-einzelpdf-zips.py dist/testakten-einzelpdfs
+          cp dist/testakten-einzelpdfs/alle-testakten-einzelpdfs.zip dist/alle-testakten-einzelpdfs.zip
+          cp dist/testakten-einzelpdfs/testakte-*-einzelpdfs.zip dist/
+          ls -la dist/testakten-einzelpdfs/testakte-*-einzelpdfs.zip | head
+          ls -lh dist/alle-testakten-einzelpdfs.zip
+
+      - name: Einzel-PDF-ZIPs validieren
+        run: python3 scripts/validate-testakten-einzelpdf-zips.py dist/testakten-einzelpdfs
+
+      - name: Skill-Markdown-Bundles bauen (echte Downloads pro Plugin)
+        run: |
+          # Pro Plugin ein ZIP mit allen SKILL.md und dem Plugin-README.
+          # Werkstatt und Schnellstart bleiben einzelne Markdown-Downloads.
+          # Die Einzel-ZIPs wandern ins Komplettpaket; als Release-Asset wird nur
+          # das Sammel-ZIP hochgeladen, damit die Asset-Zahl unter der GitHub-
+          # Grenze bleibt.
+          mkdir -p dist/skills-markdown
+          python3 scripts/build-skills-markdown-bundles.py dist/skills-markdown
+          cp dist/skills-markdown/alle-skills-markdown.zip dist/alle-skills-markdown.zip
+          ls dist/skills-markdown/*-skills-markdown.zip | wc -l
+          ls -lh dist/alle-skills-markdown.zip
+
+      - name: Prompt-Verpackung validieren
+        run: python3 scripts/validate-prompt-packaging.py dist .claude-plugin/marketplace.json
+
+      - name: Pluginlokale Testakten-Bundles bauen
+        run: |
+          # Einige Plugins, insbesondere Gerichtsplugins, haben ihre
+          # Demonstrationsakte direkt unter <plugin>/testakte. Diese Akten
+          # bekommen eigene Release-Assets fuer echte Direkt-Downloads.
+          python3 scripts/build-plugin-testakte-bundles.py dist
+          python3 scripts/build-plugin-testakte-einzelpdf-zips.py dist
+          python3 scripts/validate-plugin-testakte-assets.py dist
+          ls dist/*-testakte.zip | wc -l
+          ls -lh dist/alle-pluginlokalen-testakten.zip
+
+      - name: Sammel-ZIPs bauen
+        run: |
+          # alle-plugins-megazip.zip enthaelt die installierbaren Einzel-ZIPs
+          # plus marketplace.json, nicht die Rohordner.
+          mkdir -p dist/mega-plugins
+          cp dist/marketplace.json dist/mega-plugins/marketplace.json
+          for plugin in ${{ steps.plugins.outputs.names }}; do
+            cp "dist/${plugin}.zip" "dist/mega-plugins/${plugin}.zip"
+          done
+          (cd dist/mega-plugins && zip -rq "../alle-plugins-megazip.zip" . -x '*.DS_Store')
+          rm -rf dist/mega-plugins
+
+          # alle-testakten.zip wurde im vorherigen Schritt mit demselben
+          # Arbeitsakten-Filter gebaut wie die Einzel-Testakten-ZIPs.
+          test -s dist/alle-testakten.zip
+
+          # alles-komplettpaket.zip enthaelt die Einzel-ZIPs, Sammel-ZIPs,
+          # Marketplace und zentrale Uebersichten. Ein Download fuer alles,
+          # ohne die installierbaren Plugin-ZIPs mit Rohordnern zu vermischen.
+          mkdir -p dist/komplettpaket/plugins dist/komplettpaket/testakten dist/komplettpaket/uebersichten dist/komplettpaket/skills-markdown
+          cp dist/marketplace.json dist/komplettpaket/marketplace.json
+          cp dist/alle-plugins-megazip.zip dist/komplettpaket/alle-plugins-megazip.zip
+          cp dist/alle-testakten.zip dist/komplettpaket/alle-testakten.zip
+          cp dist/alle-testakten-einzelpdfs.zip dist/komplettpaket/alle-testakten-einzelpdfs.zip
+          cp dist/alle-skills-markdown.zip dist/komplettpaket/alle-skills-markdown.zip
+          cp dist/alle-pluginlokalen-testakten.zip dist/komplettpaket/alle-pluginlokalen-testakten.zip
+          cp dist/alle-pluginlokalen-testakten-einzelpdfs.zip dist/komplettpaket/alle-pluginlokalen-testakten-einzelpdfs.zip
+          for plugin in ${{ steps.plugins.outputs.names }}; do
+            cp "dist/${plugin}.zip" "dist/komplettpaket/plugins/${plugin}.zip"
+          done
+          for z in dist/skills-markdown/*-skills-markdown.zip; do
+            [ -e "$z" ] || continue
+            # alle-skills-markdown.zip nicht doppelt mitnehmen
+            base="$(basename "$z")"
+            if [ "$base" = "alle-skills-markdown.zip" ]; then continue; fi
+            cp "$z" "dist/komplettpaket/skills-markdown/$base"
+          done
+          if [ -d testakten ]; then
+            for z in dist/testakte-*.zip; do
+              [ -e "$z" ] || continue
+              cp "$z" "dist/komplettpaket/testakten/$(basename "$z")"
+            done
+            for z in dist/testakten-einzelpdfs/testakte-*-einzelpdfs.zip; do
+              [ -e "$z" ] || continue
+              cp "$z" "dist/komplettpaket/testakten/$(basename "$z")"
+            done
+          fi
+          for z in dist/*-testakte.zip; do
+            [ -e "$z" ] || continue
+            base="$(basename "$z")"
+            case "$base" in
+              testakte-*) continue ;;
+              alle-*) continue ;;
+            esac
+            cp "$z" "dist/komplettpaket/testakten/$base"
+          done
+          for z in dist/*-testakte-einzelpdfs.zip; do
+            [ -e "$z" ] || continue
+            base="$(basename "$z")"
+            case "$base" in
+              testakte-*) continue ;;
+              alle-*) continue ;;
+            esac
+            cp "$z" "dist/komplettpaket/testakten/$base"
+          done
+          cp README.md SKILLS.md ASSET_INDEX.md CHANGELOG.md dist/komplettpaket/uebersichten/
+          # skills-index/ enthaelt die pro-Plugin-Detailseiten, auf die SKILLS.md
+          # mit relativen Links zeigt. Ohne diesen Ordner waeren die Links im
+          # ZIP-Download ins Leere gerichtet.
+          if [ -d skills-index ]; then
+            cp -R skills-index dist/komplettpaket/uebersichten/skills-index
+          fi
+          (cd dist/komplettpaket && zip -rq "../alles-komplettpaket.zip" . -x '*.DS_Store')
+          rm -rf dist/komplettpaket
+
+          test -s dist/alle-plugins-megazip.zip
+          test -s dist/alle-testakten.zip
+          test -s dist/alle-testakten-einzelpdfs.zip
+          test -s dist/alle-skills-markdown.zip
+          test -s dist/alle-pluginlokalen-testakten.zip
+          test -s dist/alle-pluginlokalen-testakten-einzelpdfs.zip
+          test -s dist/alles-komplettpaket.zip
+          ls -lh dist/alle-plugins-megazip.zip dist/alle-testakten.zip dist/alle-testakten-einzelpdfs.zip dist/alle-skills-markdown.zip dist/alle-pluginlokalen-testakten.zip dist/alles-komplettpaket.zip
+
+      - name: Checksums erzeugen
+        run: python3 scripts/build-release-checksums.py dist
+
+      - name: Tag bestimmen
+        id: tagref
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Release-Dateien parallel und wiederaufnehmbar hochladen
+        if: steps.tagref.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.tagref.outputs.tag }}
+        run: |
+          python3 scripts/upload-release-assets.py dist "$RELEASE_TAG" \
+            --repo "${{ github.repository }}" --workers 4 --attempts 6
+
+      - name: Release-Assets remote verifizieren
+        if: steps.tagref.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/validate-release-assets.py dist "${{ steps.tagref.outputs.tag }}" --repo "${{ github.repository }}" --timeout-seconds 900 --poll-seconds 10
+
+      - name: Vollständigen Release veröffentlichen
+        if: steps.tagref.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release edit "${{ steps.tagref.outputs.tag }}" --draft=false --repo "${{ github.repository }}"
+
+      - name: Artefakte hochladen (immer)
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: plugin-zips
+          path: |
+            dist/*.zip
+            dist/*.md
+            dist/marketplace.json
+            dist/checksums-sha256.txt
+          retention-days: 30

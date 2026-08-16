@@ -1,0 +1,22 @@
+{
+  "name": "parteienrecht-parteiorganisation",
+  "version": "439.5.0",
+  "description": "Parteienrechts- und Parteiorganisations-Plugin für formale Parteiarbeit: Parteiengesetz, Satzung, Mitgliederrechte, Parteitage, Kreis- und Bezirksversammlungen, Kandidatenaufstellung, Wahlvorschläge, Parteigerichte, Spenden, Rechenschaft, Abgeordnetenrecht und Wahlleiterkommunikation.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "parteienrecht",
+    "partg",
+    "wahlrecht",
+    "wahlvorschlag",
+    "parteitag",
+    "parteigericht",
+    "spenden",
+    "rechenschaft",
+    "abgeordnetengesetz"
+  ]
+}

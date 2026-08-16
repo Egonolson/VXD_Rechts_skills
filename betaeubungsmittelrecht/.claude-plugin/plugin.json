@@ -1,0 +1,24 @@
+{
+  "name": "betaeubungsmittelrecht",
+  "version": "439.5.0",
+  "description": "Betäubungsmittelrecht-Plugin für BtMG, BtMVV, KCanG/MedCanG-Schnittstellen, Strafverfahren, Therapie, ärztliche Praxis, Apotheken und Compliance.",
+  "keywords": [
+    "betaeubungsmittelrecht",
+    "betaeubungsmittelrecht-plugin",
+    "btmg",
+    "btmvv",
+    "kcang",
+    "medcang-schnittstellen",
+    "strafverfahren",
+    "therapie",
+    "aerztliche",
+    "praxis",
+    "apotheken",
+    "compliance"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

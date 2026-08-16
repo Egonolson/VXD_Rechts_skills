@@ -1,0 +1,30 @@
+{
+  "name": "anlagen-zu-schriftsaetzen",
+  "version": "439.5.0",
+  "description": "Gerichtsprozess-Dokumentenproduktion bis zur beA-fertigen Versandmappe: liest Schriftsatz und Anlagenordner, fuehrt K/B/AST/AG fort, konvertiert und stempelt jede PDF-Seite, prueft ERVV, Signatur, Dateinamen, Empfaenger und Eingang und liefert Verzeichnis, Manifest und Freigabevermerk.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "anlagen",
+    "anlagenkonvolut",
+    "beA",
+    "schriftsatz",
+    "klageschrift",
+    "klageerwiderung",
+    "replik",
+    "duplik",
+    "anlage-K",
+    "anlage-B",
+    "pdf-konvertierung",
+    "anlagenstempel",
+    "dokumentenproduktion",
+    "versandmappe",
+    "gerichtsprozess-dokumentenproduktion",
+    "ervv",
+    "rdg"
+  ]
+}

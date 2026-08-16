@@ -1,0 +1,24 @@
+{
+  "name": "weltraumrecht",
+  "version": "439.5.0",
+  "description": "Großes Plugin für deutsches, europäisches und internationales Weltraumrecht: Raumfahrtverträge, Satelliten, Haftung, Weltraumbahnhof, Raketen, Raumstationen, Frequenzen, Exportkontrolle und Space Property.",
+  "keywords": [
+    "weltraumrecht",
+    "grosses",
+    "europaeisches",
+    "internationales",
+    "raumfahrtvertraege",
+    "satelliten",
+    "haftung",
+    "weltraumbahnhof",
+    "raketen",
+    "raumstationen",
+    "frequenzen",
+    "exportkontrolle"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

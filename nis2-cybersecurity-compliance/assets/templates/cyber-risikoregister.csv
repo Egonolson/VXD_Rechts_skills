@@ -1,0 +1,2 @@
+Risiko,Asset,Impact,Wahrscheinlichkeit,Kontrolle,Owner,Frist,Nachweis,Status
+Ransomware,ERP,sehr hoch,mittel,immutable Backup + EDR,CISO,2026-07-15,Restore-Test offen,gelb

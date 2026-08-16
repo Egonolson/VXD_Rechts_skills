@@ -1,0 +1,23 @@
+{
+  "name": "vertragsausfueller",
+  "version": "439.5.0",
+  "description": "Freistehendes Vertragsausfüller-Plugin: DOCX-Vorlagen und Altverträge strippen, Felder erkennen, Term Sheets mappen, Rückfragen führen, neue Verträge erzeugen und Track-Changes-Fassungen nur nach ausdrücklicher Nachfrage vorbereiten.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "vertrag",
+    "docx",
+    "vorlage",
+    "termsheet",
+    "redline",
+    "track-changes",
+    "mietvertrag",
+    "bsag",
+    "automatisierung",
+    "freistehend"
+  ]
+}

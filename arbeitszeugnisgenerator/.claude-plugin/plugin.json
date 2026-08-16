@@ -1,0 +1,23 @@
+{
+  "name": "arbeitszeugnisgenerator",
+  "version": "439.5.0",
+  "description": "Erstellt, prueft und berichtigt einfache, qualifizierte, Zwischen- und Ausbildungszeugnisse aus vorhandenen Unterlagen. Verknuepft Taetigkeitsbild, Tatsachenbelege, Beweislast, klare Formulierungen, Vergleich und Vollstreckung zu einem verwendbaren Arbeitsprodukt.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "arbeitszeugnis",
+    "qualifiziertes-zeugnis",
+    "zeugniserstellung",
+    "ampelsystem",
+    "arbeitsrecht",
+    "hr",
+    "zeugnissprache",
+    "schlussformel",
+    "notenstufen",
+    "paragraf-109-gewo"
+  ]
+}

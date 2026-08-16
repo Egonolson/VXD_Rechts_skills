@@ -1,0 +1,25 @@
+{
+  "name": "arbeitsrecht",
+  "version": "439.5.0",
+  "description": "Arbeitsrechtliche Workflows für Kündigung, Befristung, Urlaub, AGG, Aufhebungsvertrag, Betriebsrat, Arbeitszeit, Lohn und Expansion. Rechtsprechung wird nur mit Gericht, Datum, Aktenzeichen und verifizierbarer Quelle verwendet.",
+  "keywords": [
+    "arbeitsrecht",
+    "arbeitsrechtliche",
+    "workflows",
+    "kuendigung",
+    "befristung",
+    "urlaub",
+    "agg",
+    "aufhebungsvertrag",
+    "betriebsrat",
+    "arbeitszeit",
+    "lohn",
+    "expansion"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht"
+}

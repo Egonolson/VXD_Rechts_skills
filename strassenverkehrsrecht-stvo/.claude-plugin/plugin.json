@@ -1,0 +1,22 @@
+{
+  "name": "strassenverkehrsrecht-stvo",
+  "version": "439.5.0",
+  "description": "StVO-/Straßenverkehrsrecht-Plugin für Verkehrsregeln, Zeichen, Anordnungen, Ausnahmegenehmigungen, Fahrerlaubnis, Bußgeld-Schnittstellen und Behördenpraxis.",
+  "keywords": [
+    "strassenverkehrsrecht",
+    "stvo",
+    "strassenverkehrsrecht-plugin",
+    "verkehrsregeln",
+    "zeichen",
+    "anordnungen",
+    "ausnahmegenehmigungen",
+    "fahrerlaubnis",
+    "bussgeld-schnittstellen",
+    "behoerdenpraxis"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  }
+}

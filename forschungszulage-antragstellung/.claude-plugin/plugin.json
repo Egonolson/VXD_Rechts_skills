@@ -1,0 +1,21 @@
+{
+  "name": "forschungszulage-antragstellung",
+  "version": "439.5.0",
+  "description": "Forschungszulage-Antragstellung nach FZulG: adaptiver Fördercheck, BSFZ-Portaltexte mit Zeichenbudgets, Finanzamt-Antrag, FuE-Abgrenzung, Bemessungsgrundlage 2026, Auszahlung, Verlust-/Insolvenzlage, Dokumentation, Beihilfen, Einspruch und Mehrjahresroadmap.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "forschungszulage",
+    "fzulg",
+    "bsfz",
+    "fue",
+    "forschung-und-entwicklung",
+    "steuerliche-forschungsfoerderung",
+    "transfer",
+    "finanzamt"
+  ]
+}

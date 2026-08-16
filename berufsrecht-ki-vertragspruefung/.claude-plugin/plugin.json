@@ -1,0 +1,36 @@
+{
+  "name": "berufsrecht-ki-vertragspruefung",
+  "version": "439.5.0",
+  "description": "Berufsrechtliche und strafrechtliche Vorprüfung von Verträgen mit Legal-AI-Anbietern: § 43e BRAO, § 203 StGB, Consumer-Tool-Abgrenzung, No-Training, Telemetrie, Drittstaat, KI-VO-Rollen, Art.-50-Transparenz, Schatten-KI und Klauselvorschläge.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "berufsrecht",
+    "strafrecht",
+    "ki-vertrag",
+    "legal-ai",
+    "verschwiegenheit",
+    "berufsgeheimnis",
+    "paragraph-43e-brao",
+    "paragraph-203-stgb",
+    "paragraph-62a-stberg",
+    "paragraph-50a-wpo",
+    "paragraph-39c-pao",
+    "paragraph-26a-bnoto",
+    "ai-act",
+    "schatten-ki",
+    "consumer-ki",
+    "dienstleister",
+    "vertragspruefung",
+    "klauselvorschlaege",
+    "rueckfragebrief",
+    "no-training",
+    "iso-27001",
+    "bsi-c5",
+    "cloud-act"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "sozialversicherungsstatus-pruefer",
+  "version": "439.5.0",
+  "description": "Sozialversicherungsstatus und DRV-Statusfeststellung: Geschäftsführer, Freelancer, Anwälte, Lehrkräfte, Musikschulen, Plattformarbeit und Scheinselbständigkeit.",
+  "license": "Apache-2.0 OR MIT",
+  "author": {
+    "name": "Klotzkette",
+    "email": "39582916+Klotzkette@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/Klotzkette/claude-fuer-deutsches-recht",
+  "keywords": [
+    "statusfeststellung",
+    "drv",
+    "scheinselbstaendigkeit",
+    "sgb-iv",
+    "freelancer",
+    "geschaeftsfuehrer"
+  ]
+}
